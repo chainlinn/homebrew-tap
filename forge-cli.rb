@@ -7,9 +7,6 @@ class ForgeCli < Formula
 
   conflicts_with "forge", because: "both ship a `forge` binary"
 
-  depends_on "gh"
-  depends_on "jq"
-
   def install
     bin.install "bin/forge"
     (share/"forge/templates").install Dir["templates/shared/*"]
@@ -17,13 +14,13 @@ class ForgeCli < Formula
 
   def caveats
     <<~EOS
-      Forge uses ~/.forge/config/.secrets for credentials.
-      Create one before running 'forge init':
+      Prerequisites:
+        brew install gh jq
+        gh auth login
+
+      Setup credentials:
         mkdir -p ~/.forge/config
         cp /path/to/your/.secrets ~/.forge/config/.secrets
-
-      Then authenticate with GitHub:
-        gh auth login
     EOS
   end
 
