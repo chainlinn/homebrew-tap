@@ -6,7 +6,7 @@ Homebrew tap for [forge](https://github.com/chainlinn/forge).
 
 ```bash
 brew tap chainlinn/tap
-brew install forge
+brew install forge-cli
 ```
 
 ## 更新
