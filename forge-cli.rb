@@ -9,11 +9,9 @@ class ForgeCli < Formula
 
   def install
     bin.install "bin/forge"
-    (share/"forge/templates").install Dir["templates/project/*"]
-    (share/"forge/templates/project/hooks").install Dir["templates/project/hooks/*"]
-    (share/"forge/templates/workflows").install Dir["templates/workflows/*"]
-    (share/"forge/templates/infra").install Dir["templates/infra/*"]
-    (share/"forge/templates/infra/cloudflared").install Dir["templates/infra/cloudflared/*"]
+    (share/"forge/templates").install "templates/project"
+    (share/"forge/templates").install "templates/workflows"
+    (share/"forge/templates").install "templates/infra"
   end
 
   def caveats
