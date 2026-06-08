@@ -2,16 +2,17 @@ class ForgeCli < Formula
   desc "一键创建 GitHub + Docker Hub 仓库，生成 CI/CD 部署流水线"
   homepage "https://github.com/chainlinn/forge"
   url "https://github.com/chainlinn/forge/releases/download/v0.1.0/forge-v0.1.0.tar.gz"
-  sha256 "228278b5169ca3aadb7fb55dfd0fd131235e1897b49238bac5cfbe5f148d037a"
+  sha256 "a57812e796dd7b7b4c0e8b250ec6544caa58d6dc79b65f240c35008d9a27312c"
   license "MIT"
 
   conflicts_with "forge", because: "both ship a `forge` binary"
 
   def install
     bin.install "bin/forge"
-    (share/"forge/templates/project").install Dir["templates/project/*"
-    (share/"forge/templates/project/hooks/lib").install Dir["templates/project/hooks/lib/*"]
-    (share/"forge/templates/project/hooks").install Dir["templates/project/hooks/*"]
+    (share/"forge/templates/project").install Dir["templates/project/*"]
+    (share/"forge/templates/project/hooks/env").install Dir["templates/project/hooks/env/*"]
+    (share/"forge/templates/project/hooks/events").install Dir["templates/project/hooks/events/*"]
+    (share/"forge/templates/project/hooks/plugins").install Dir["templates/project/hooks/plugins/*"]
     (share/"forge/templates/workflows").install Dir["templates/workflows/*"]
   end
 
