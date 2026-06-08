@@ -2,7 +2,7 @@ class ForgeCli < Formula
   desc "一键创建 GitHub + Docker Hub 仓库，生成 CI/CD 部署流水线"
   homepage "https://github.com/chainlinn/forge"
   url "https://github.com/chainlinn/forge/releases/download/v0.1.0/forge-v0.1.0.tar.gz"
-  sha256 "425337c36523401926c5312ed4feb5ebd592b16d811be692c5c751370a91fd47"
+  sha256 "4da0e0009fc7ab0dc6a71393d1590488c675d624988b3c7d1a1432d6eee6084d"
   license "MIT"
 
   conflicts_with "forge", because: "both ship a `forge` binary"
