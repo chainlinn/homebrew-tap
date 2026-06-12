@@ -9,10 +9,10 @@ class ForgeCli < Formula
 
   def install
     bin.install "bin/forge"
-    (share/"forge/templates/project").install Dir["templates/project/*"]
-    (share/"forge/templates/project/hooks/env").install Dir["templates/project/hooks/env/*"]
-    (share/"forge/templates/project/hooks/events").install Dir["templates/project/hooks/events/*"]
-    (share/"forge/templates/project/hooks/plugins").install Dir["templates/project/hooks/plugins/*"]
+    (share/"forge/templates/project").install Dir["templates/project/*"].select { |f| File.file?(f) }
+    (share/"forge/templates/project/hooks").install "templates/project/hooks/env"
+    (share/"forge/templates/project/hooks").install "templates/project/hooks/events"
+    (share/"forge/templates/project/hooks").install "templates/project/hooks/plugins"
     (share/"forge/templates/workflows").install Dir["templates/workflows/*"]
   end
 
